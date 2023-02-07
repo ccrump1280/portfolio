@@ -1,29 +1,28 @@
-import { Box, Typography } from '@mui/material';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
+import { Box, Typography, Grid } from '@mui/material';
+import CoffeeKitThumbnail from '../assets/coffee-kit-thumbnail.jpg'
 
 export default function RecentProjects(){
 
     return (
-        <>
-            <Typography variant='h5'>Latest Projects</Typography>
-            <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+        <Box sx={{padding: "0 1rem"}}>
+            <Typography variant='h5' sx={{mb:"2rem"}}>Latest Projects</Typography>
+            <Grid container spacing={1}>
                 {RECENT_PROJECTS.map((item) => (
-                    <ImageListItem key={item.img}>
-                    <img
-                        src={`${item.img}`}
-                        srcSet={`${item.img}`}
-                        alt={item.title}
-                        loading="lazy"
-                    />
-                    </ImageListItem>
+                    <Grid item xs={12} md={4}>
+                        <img
+                            src={item.img}
+                            width='100%'
+                            style={{borderRadius: "4px"}}
+                        />
+                    </Grid>
                 ))}
-            </ImageList>
-        </>
+            </ Grid>
+        </ Box>
     )
 }
     const RECENT_PROJECTS = [
         {
-            id: 'coffee-kit', 
+            id: 'coffee-kit',
+            img: CoffeeKitThumbnail,
         }
     ]

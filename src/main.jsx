@@ -9,18 +9,24 @@ import {
 } from 'react-router-dom'
 
 import Root from './routes/root'
-
+import About from './routes/about'
 import ErrorPage from './error-page'
 
 const theme = createTheme();
 theme.typography.fontFamily = 'Lato';
+theme.typography.body1.margin = '1rem 1rem';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />
-  }
+  },
+  {
+    path: "about/",
+    element: <About />,
+    errorElement: <ErrorPage />
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

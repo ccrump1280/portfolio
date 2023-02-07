@@ -2,7 +2,13 @@ import { Button } from '../StyledComponents';
 import { Box, Typography } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
-export default function Hero( {title, imageSource} ) {
+export default function Hero( {title, imageSource, isContactButton} ) {
+    let contactButton;
+    if (isContactButton) {
+        contactButton = <Button primary>Get in Touch</Button>;
+    }else {
+        contactButton = null;
+    }
     return (
         <>
             <Box sx ={{
@@ -34,8 +40,7 @@ export default function Hero( {title, imageSource} ) {
                     }}>
                         {title}
                     </Typography>
-                    
-                    <Button primary>Get in Touch</Button>
+                    {contactButton}
                 </Box>
             </Box>
         </>

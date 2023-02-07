@@ -15,3 +15,27 @@ export const Button = styled.button `
         border-radius: 4px;
     `};
 `
+
+export const Input = styled.input `
+    background-color: #4B4B4B;
+    border: none;
+    border-radius: 4px;
+    height: 1.8rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    &::placeholder {
+        font-size: 1rem;
+        font-family: Lato;
+    }
+`
+export const TextArea = styled.textarea `
+    background-color: #4B4B4B;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+
+    &::placeholder {
+        font-size: 1rem;
+        font-family: Lato;
+    }
+`

@@ -10,6 +10,8 @@ import {
 
 import Root from './routes/root'
 import About from './routes/about'
+import Contact from './routes/contact'
+import Category, {loader as categoryloader} from './routes/category'
 import ErrorPage from './error-page'
 
 const theme = createTheme();
@@ -27,6 +29,17 @@ const router = createBrowserRouter([
     element: <About />,
     errorElement: <ErrorPage />
   },
+  {
+    path: "contact/",
+    element: <Contact />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "category/:categoryId",
+    element: <Category />,
+    errorElement: <ErrorPage />,
+    loader: categoryloader
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -11,7 +11,8 @@ import {
 import Root from './routes/root'
 import About from './routes/about'
 import Contact from './routes/contact'
-import Category, {loader as categoryloader} from './routes/category'
+import Category, {loader as categoryLoader} from './routes/category'
+import Project, {loader as projectLoader} from './routes/project'
 import ErrorPage from './error-page'
 
 const theme = createTheme();
@@ -38,7 +39,13 @@ const router = createBrowserRouter([
     path: "category/:categoryId",
     element: <Category />,
     errorElement: <ErrorPage />,
-    loader: categoryloader
+    loader: categoryLoader
+  },
+  {
+    path: "category/:categoryId/:projectId",
+    element: <Project />,
+    errorElement: <ErrorPage />,
+    loader: projectLoader
   }
 ]);
 

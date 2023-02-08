@@ -16,11 +16,11 @@ export default function Contact(){
                 padding: "1rem",
                 textAlign: "left"
             }}>
-                <Typography variant="body1" sx={{margin: "0"}}>Name</Typography>
+                <Typography variant="body2">Name</Typography>
                 <Input type="text" name="user_name" placeholder="Enter your name" />
-                <Typography variant="body1" sx={{margin: "0"}} >Email</Typography>
+                <Typography variant="body2" >Email</Typography>
                 <Input type="text" name="user_email" placeholder="Enter your email adress" />
-                <Typography variant="body1" sx={{margin: "0"}} >Message</Typography>
+                <Typography variant="body2" >Message</Typography>
                 <TextArea name="message" rows="8" placeholder="Example Text"></TextArea>
             </form>
             <Button primary type="submit" form="contact-form" value="Submit">Submit</Button>

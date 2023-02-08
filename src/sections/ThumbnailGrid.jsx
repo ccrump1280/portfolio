@@ -1,17 +1,17 @@
 import { Box, Typography, Grid } from '@mui/material';
 import CoffeeKitThumbnail from '../assets/coffee-kit-thumbnail.jpg'
 
-export default function RecentProjects(){
+export default function ThumbnailGrid({projectData}){
 
     return (
         <>
             <Box sx={{padding: "0 1rem"}}>
-                <Typography variant='h5' sx={{mb:"2rem"}}>Latest Projects</Typography>
+                <Typography variant='h5' sx={{mb:"2rem"}}>Latest Work</Typography>
                 <Grid container spacing={1}>
-                    {RECENT_PROJECTS.map((item) => (
-                        <Grid item xs={12} md={4} key={item.id}>
+                    {projectData.projects.map((project) => (
+                        <Grid item xs={12} md={4} key={project.id}>
                             <img
-                                src={item.img}
+                                src={project.thumbnailURL}
                                 width='100%'
                                 style={{borderRadius: "4px"}}
                             />
@@ -22,9 +22,3 @@ export default function RecentProjects(){
         </>
     )
 }
-    const RECENT_PROJECTS = [
-        {
-            id: 'coffee-kit',
-            img: CoffeeKitThumbnail,
-        }
-    ]

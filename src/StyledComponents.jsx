@@ -1,4 +1,5 @@
-import styled, {css} from 'styled-components'
+import styled, {css} from 'styled-components';
+import {Link} from 'react-router-dom';
 
 export const Button = styled.button `
     background: transparent;
@@ -38,4 +39,8 @@ export const TextArea = styled.textarea `
         font-size: 1rem;
         font-family: Lato;
     }
+`
+export const StyledLink = styled(Link) `
+    color: #3EB489;
+    text-decoration: none;
 `

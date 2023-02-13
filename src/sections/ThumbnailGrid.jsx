@@ -1,5 +1,6 @@
 import { Box, Typography, Grid } from '@mui/material';
-import CoffeeKitThumbnail from '../assets/coffee-kit-thumbnail.jpg'
+import CoffeeKitThumbnail from '../assets/coffee-kit-thumbnail.jpg';
+import { Link } from 'react-router-dom';
 
 export default function ThumbnailGrid({projectData}){
 
@@ -10,14 +11,16 @@ export default function ThumbnailGrid({projectData}){
                 <Grid container spacing={1}>
                     {projectData.projects.map((project) => (
                         <Grid item xs={12} md={4} key={project.id}>
-                            <img
-                                src={project.thumbnailURL}
-                                width='100%'
-                                style={{borderRadius: "4px"}}
-                            />
+                            <Link to={project.route}>
+                                <img
+                                    src={project.thumbnailURL}
+                                    width='100%'
+                                    style={{borderRadius: "4px"}}
+                                />
+                            </Link>
                         </Grid>
                     ))}
-                </ Grid>
+                </Grid>
             </Box>
         </>
     )

@@ -8,7 +8,8 @@ export const CATEGORY_DATA = {
         projects: [
             {
                 id: "coffeekit",
-                thumbnailURL: '/src/assets/coffee-kit-thumbnail.jpg'
+                thumbnailURL: '/src/assets/coffee-kit-thumbnail.jpg',
+                route: '/project/coffeekit'
             }
         ]
     },
@@ -21,7 +22,8 @@ export const CATEGORY_DATA = {
         projects: [
             {
                 id: "coffeekit",
-                thumbnailURL: '/src/assets/coffee-kit-thumbnail.jpg'
+                thumbnailURL: '/src/assets/coffee-kit-thumbnail.jpg',
+                route: '/project/coffeekit'
             }
         ]
     }

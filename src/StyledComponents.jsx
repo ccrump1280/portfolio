@@ -2,20 +2,16 @@ import styled, {css} from 'styled-components';
 import {Link} from 'react-router-dom';
 
 export const Button = styled.button `
-    background: transparent;
-    border: none;
     color: #3EB489;
-    margin: 1rem 1rem;
-    padding: 0.25em 1em;
-    font-size: 16px;
-
+    text-decoration: none;
+    background-color: inherit;
     ${ props => props.primary && css `
         border: 1px solid #3EB489;
         font-size: 1rem;
         padding: 0.7rem;
         border-radius: 4px;
     `};
-`
+` 
 
 export const Input = styled.input `
     background-color: #4B4B4B;
@@ -26,7 +22,6 @@ export const Input = styled.input `
     margin-bottom: 1rem;
     &::placeholder {
         font-size: 1rem;
-        font-family: Lato;
     }
 `
 export const TextArea = styled.textarea `
@@ -37,10 +32,16 @@ export const TextArea = styled.textarea `
 
     &::placeholder {
         font-size: 1rem;
-        font-family: Lato;
     }
 `
 export const StyledLink = styled(Link) `
     color: #3EB489;
     text-decoration: none;
+
+    ${ props => props.primary && css `
+        border: 1px solid #3EB489;
+        font-size: 1rem;
+        padding: 0.7rem;
+        border-radius: 4px;
+    `};
 `

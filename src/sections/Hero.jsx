@@ -1,4 +1,4 @@
-import { Button } from '../StyledComponents';
+import { StyledLink } from '../StyledComponents';
 import { Box, Typography } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { useState } from 'react';
@@ -35,9 +35,9 @@ export default function Hero( {title, heroURL, isContactButton, thumbnail} ) {
                 }}>
                     <Typography variant="h5">Connor Crump</Typography>
                     <Box sx={{display:{xs:'none', md:'flex'}}}>
-                        <Button>Portfolio</Button>
-                        <Button>About</Button>
-                        <Button>Contact</Button>
+                        <StyledLink to={'/'} >Portfolio</StyledLink>
+                        <StyledLink to={'/about'}>About</StyledLink>
+                        <StyledLink to={'/contact'}>Contact</StyledLink>
                     </Box>
                     <MenuRoundedIcon sx={{display:{xs:'block', md:'none'}}} onClick={toggleMobileMenu(true)}/>
                 </Box>
@@ -49,7 +49,7 @@ export default function Hero( {title, heroURL, isContactButton, thumbnail} ) {
                     }}>
                         {title}
                     </Typography>
-                    {isContactButton && <Button primary>Get in Touch</Button> }
+                    {isContactButton && <StyledLink to={'/contact'} primary>Get in Touch</StyledLink> }
                 </Box>
             </Box>
         </>

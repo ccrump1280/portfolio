@@ -1,7 +1,10 @@
+* {
+  font-family: Lato;
+}
+
 body {
   margin: 0;
   background-color: #222222;
   color: white;
   text-align: center;
 }
-

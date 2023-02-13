@@ -2,7 +2,7 @@ import Hero from '../sections/Hero'
 import HomeHeroBackground from '../assets/home-hero-background.jpg'
 import AvatarImage from '../assets/avatar-image.jpg'
 import { Box, Typography } from '@mui/material'
-import { Button } from '../StyledComponents'
+import { StyledLink } from '../StyledComponents'
 
 export default function About(){
     return (
@@ -30,7 +30,7 @@ export default function About(){
                 </Typography>
             </Box>
             
-            <Button primary>Contact Me</Button>
+            <StyledLink to={'/contact'} primary>Contact Me</StyledLink>
         </>
     )
 }

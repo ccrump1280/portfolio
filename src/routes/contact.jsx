@@ -11,7 +11,7 @@ export default function Contact(){
     }
     return (
         <>
-            <Hero title="Reach out! Let's start something together." imageSource= { HomeHeroBackground } />
+            <Hero title="Reach out! Let's start something together." heroURL= { HomeHeroBackground } />
             <form ref={form} onSubmit={sendEmail} id="contact-form" style={{
                 padding: "1rem",
                 textAlign: "left"

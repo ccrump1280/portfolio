@@ -8,7 +8,7 @@ export default function Root() {
     const homeTitle = "Helping create a beautiful store for your brand"
     return (
         <>
-            <Hero title = { homeTitle } imageSource = {HomeHeroBackground} isContactButton = { true } />
+            <Hero title = { homeTitle } heroURL = {HomeHeroBackground} isContactButton = { true } />
             <ThumbnailGrid projectData={CATEGORY_DATA['recent']} />
         </>
     )

@@ -7,7 +7,7 @@ import { Button } from '../StyledComponents'
 export default function About(){
     return (
         <>
-            <Hero title="A little about me." imageSource = {HomeHeroBackground}/>
+            <Hero title="A little about me." heroURL = {HomeHeroBackground}/>
             <img src={ AvatarImage } style={{
                 borderRadius:"100%",
                 width: '200px',

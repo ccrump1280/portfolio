@@ -2,14 +2,14 @@ import { Drawer, Box, List, ListItem, ListItemButton, ListItemText } from '@mui/
 import { StyledLink } from '../StyledComponents';
 import CloseIcon from '@mui/icons-material/Close';
 
-export default function MobileMenu( {isMobileMenuOpen, toggleDrawer} ) {
+export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
 
     return (
         <>
             <Drawer 
                 anchor='right'
                 open={isMobileMenuOpen}
-                onClose={toggleDrawer(false)}    
+                onClose={toggleMobileMenu(false)}    
             >
                 <Box
                     sx={{
@@ -19,8 +19,8 @@ export default function MobileMenu( {isMobileMenuOpen, toggleDrawer} ) {
                         position: 'relative'
                     }}
                     role="presentation"
-                    onClick={toggleDrawer(false)}
-                    onKeyDown={toggleDrawer(false)}    
+                    onClick={toggleMobileMenu(false)}
+                    onKeyDown={toggleMobileMenu(false)}    
                 >
                     <CloseIcon 
                         sx={{
@@ -29,7 +29,7 @@ export default function MobileMenu( {isMobileMenuOpen, toggleDrawer} ) {
                             top: '10px',
                             right: '10px'
                         }}
-                        onClick={toggleDrawer(false)}
+                        onClick={toggleMobileMenu(false)}
                     />
                     <List>
                         <ListItem disablePadding>

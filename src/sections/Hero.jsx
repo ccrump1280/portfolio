@@ -4,11 +4,11 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { useState } from 'react';
 import MobileMenu from './MobileMenu';
 
-export default function Hero( {title, imageSource, isContactButton} ) {
+export default function Hero( {title, heroURL, isContactButton, thumbnail} ) {
     
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const toggleDrawer = (isOpen) => (event) => {
+    const toggleMobileMenu = (isOpen) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
@@ -17,9 +17,9 @@ export default function Hero( {title, imageSource, isContactButton} ) {
 
     return (
         <>  
-            <MobileMenu isMobileMenuOpen={isMobileMenuOpen} toggleDrawer={toggleDrawer} />
+            <MobileMenu isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
             <Box sx ={{
-                backgroundImage: `linear-gradient(180deg, rgba(34,34,34,0.65) 0%, rgba(34,34,34,1) 100%), url(${imageSource})`,
+                backgroundImage: `linear-gradient(180deg, rgba(34,34,34,0.65) 0%, rgba(34,34,34,1) 100%), url(${heroURL})`,
                 backgroundSize: 'cover',
                 width: '100%',
                 padding: '1rem 1rem',
@@ -39,9 +39,10 @@ export default function Hero( {title, imageSource, isContactButton} ) {
                         <Button>About</Button>
                         <Button>Contact</Button>
                     </Box>
-                    <MenuRoundedIcon sx={{display:{xs:'block', md:'none'}}} onClick={toggleDrawer(true)}/>
+                    <MenuRoundedIcon sx={{display:{xs:'block', md:'none'}}} onClick={toggleMobileMenu(true)}/>
                 </Box>
                 <Box sx={{mt:'3rem'}}>
+                    {thumbnail && <img src={thumbnail} style={{width: '70%'}}/>} 
                     <Typography variant="h4" sx={{
                         lineHeight: '2.2rem',
                         mb:"1.5rem",

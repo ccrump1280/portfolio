@@ -29,6 +29,8 @@ export const CATEGORY_DATA = {
 
 export const PROJECT_DATA = {
     coffeekit: {
-        title: "Coffee Kit"
+        title: "Coffee Kit",
+        heroURL: "/src/assets/coffee-kit-hero.jpg",
+        thumbnail: "/src/assets/coffee-kit-thumbnail.jpg" 
     }
 }

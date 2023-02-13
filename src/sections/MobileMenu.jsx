@@ -1,9 +1,18 @@
 import { Drawer, Box, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { StyledLink } from '../StyledComponents';
+import { StyledLink, Button } from '../StyledComponents';
 import CloseIcon from '@mui/icons-material/Close';
+import { useState } from 'react';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import Collapse from '@mui/material/Collapse';
 
 export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
 
+    const [tabOpen, setTabOpen] = useState(true);
+
+    const handleClick = () => {
+        setTabOpen(!tabOpen);
+    }
     return (
         <>
             <Drawer 
@@ -16,10 +25,10 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                         width:250,
                         height: '100vh',
                         backgroundColor: '#222222',
-                        position: 'relative'
+                        position: 'relative',
+                        paddingTop: '15px'
                     }}
                     role="presentation"
-                    onClick={toggleMobileMenu(false)}
                     onKeyDown={toggleMobileMenu(false)}    
                 >
                     <CloseIcon 
@@ -27,30 +36,55 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                             color:'white',
                             position: 'absolute',
                             top: '10px',
-                            right: '10px'
+                            right: '10px',
+                            zIndex: '1'
                         }}
+                        
                         onClick={toggleMobileMenu(false)}
                     />
-                    <List>
-                        <ListItem disablePadding>
-                            <StyledLink to={'/'}>
-                                <ListItemButton>
-                                    <ListItemText primary="Portfolio"/>
-                                </ListItemButton>
-                            </StyledLink>
+                    <List sx={{color: '#3EB489'}}>
+                        <ListItem disablePadding  onClick={handleClick}>
+                            <Button>
+                                <ListItemText primary="Portfolio"/>
+                            </Button>
+                            {tabOpen ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
-                        <ListItem disablePadding>
+                        <Collapse in={tabOpen} timeout="auto" unmountOnExit>
+                            <List disablePadding>
+                                <ListItem 
+                                    sx={{pl: '15px'}} 
+                                    onClick={toggleMobileMenu(false)}
+                                >
+                                    <StyledLink to={'/category/shopify'}>
+                                        <ListItemText primary="Shopify Stores"/>
+                                    </StyledLink>
+                                </ListItem>
+                                <ListItem 
+                                    sx={{pl: '15px'}}
+                                    onClick={toggleMobileMenu(false)}
+                                >
+                                    <StyledLink to={'/category/react'}>
+                                        <ListItemText primary="React Apps"/>
+                                    </StyledLink>
+                                </ListItem>
+                                <ListItem 
+                                    sx={{pl: '15px'}}
+                                    onClick={toggleMobileMenu(false)}
+                                >
+                                    <StyledLink to={'/category/frontend'}>
+                                        <ListItemText primary="Front End Development"/>
+                                    </StyledLink>
+                                </ListItem>        
+                            </List>
+                        </Collapse>
+                        <ListItem disablePadding onClick={toggleMobileMenu(false)}>
                             <StyledLink to={'/about'}>
-                                <ListItemButton>
-                                    <ListItemText primary="About"/>
-                                </ListItemButton>
+                                <ListItemText primary="About"/>
                             </StyledLink>
                         </ListItem>
-                        <ListItem disablePadding>
+                        <ListItem disablePadding onClick={toggleMobileMenu(false)}>
                             <StyledLink to={'/contact'}>
-                                <ListItemButton>
-                                    <ListItemText primary="Contact"/>
-                                </ListItemButton>
+                                <ListItemText primary="Contact"/>
                             </StyledLink>
                         </ListItem>
                     </List>

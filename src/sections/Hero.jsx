@@ -3,6 +3,7 @@ import { Box, Typography } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { useState } from 'react';
 import MobileMenu from './MobileMenu';
+import { Link } from 'react-router-dom'
 
 export default function Hero( {title, heroURL, isContactButton, thumbnail} ) {
     
@@ -33,7 +34,15 @@ export default function Hero( {title, heroURL, isContactButton, thumbnail} ) {
                     position: 'relative'
                     
                 }}>
-                    <Typography variant="h5">Connor Crump</Typography>
+                    <Link 
+                        to={'/'} 
+                        style={{
+                            textDecoration: 'none',
+                            color: 'white'
+                        }}
+                    >
+                        <Typography variant="h5">Connor Crump</Typography>
+                    </Link>
                     <Box sx={{display:{xs:'none', md:'flex'}}}>
                         <StyledLink to={'/'} >Portfolio</StyledLink>
                         <StyledLink to={'/about'}>About</StyledLink>

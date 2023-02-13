@@ -5,6 +5,8 @@ export const Button = styled.button `
     color: #3EB489;
     text-decoration: none;
     background-color: inherit;
+    border: none;
+    padding: 0;
     ${ props => props.primary && css `
         border: 1px solid #3EB489;
         font-size: 1rem;

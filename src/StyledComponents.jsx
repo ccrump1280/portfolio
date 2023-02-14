@@ -6,11 +6,14 @@ export const Button = styled.button `
     background-color: inherit;
     border: none;
     padding: 0;
+    display: block;
+    width: fit-content;
     ${ props => props.primary && css `
         border: 1px solid #3EB489;
         font-size: 1rem;
         padding: 0.7rem;
         border-radius: 4px;
+        margin: auto;
     `};
 ` 
 

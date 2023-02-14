@@ -27,7 +27,7 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                         height: '100vh',
                         backgroundColor: '#222222',
                         position: 'relative',
-                        paddingTop: '15px'
+                        boxSizing: 'border-box'
                     }}
                     role="presentation"
                     onKeyDown={toggleMobileMenu(false)}    
@@ -44,16 +44,15 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                         onClick={toggleMobileMenu(false)}
                     />
                     <List sx={{color: '#3EB489'}}>
-                        <ListItem disablePadding  onClick={handleClick}>
+                        <ListItem onClick={handleClick}>
                             <Button>
                                 <ListItemText primary="Portfolio"/>
                             </Button>
                             {tabOpen ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
                         <Collapse in={tabOpen} timeout="auto" unmountOnExit>
-                            <List disablePadding>
-                                <ListItem 
-                                    sx={{pl: '15px'}} 
+                            <List sx={{ml:"24px"}}>
+                                <ListItem  
                                     onClick={toggleMobileMenu(false)}
                                 >
                                     <Button as={Link} to={'/category/shopify'}>
@@ -61,7 +60,6 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                                     </Button>
                                 </ListItem>
                                 <ListItem 
-                                    sx={{pl: '15px'}}
                                     onClick={toggleMobileMenu(false)}
                                 >
                                     <Button as={Link} to={'/category/react'}>
@@ -69,7 +67,6 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                                     </Button>
                                 </ListItem>
                                 <ListItem 
-                                    sx={{pl: '15px'}}
                                     onClick={toggleMobileMenu(false)}
                                 >
                                     <Button as={Link} to={'/category/frontend'}>
@@ -78,12 +75,12 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                                 </ListItem>        
                             </List>
                         </Collapse>
-                        <ListItem disablePadding onClick={toggleMobileMenu(false)}>
+                        <ListItem onClick={toggleMobileMenu(false)}>
                             <Button as={Link} to={'/about'}>
                                 <ListItemText primary="About"/>
                             </Button>
                         </ListItem>
-                        <ListItem disablePadding onClick={toggleMobileMenu(false)}>
+                        <ListItem onClick={toggleMobileMenu(false)}>
                             <Button as={Link} to={'/contact'}>
                                 <ListItemText primary="Contact"/>
                             </Button>

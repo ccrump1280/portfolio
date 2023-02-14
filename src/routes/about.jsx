@@ -29,7 +29,7 @@ export default function About(){
                     eu augue ut lectus arcu bibendum at varius. Dolor magna eget est lorem ipsum dolor sit amet. Tellus mauris a diam maecenas sed enim ut. 
                     Lorem donec massa sapien faucibus et. Mauris cursus mattis molestie a iaculis at erat. Sit amet consectetur adipiscing elit.
                 </Typography>
-                <Button as={Link} to={'/contact'}>Contact Me</Button>
+                <Button as={Link} to={'/contact'} primary="true">Contact Me</Button>
             </Box>   
         </>
     )

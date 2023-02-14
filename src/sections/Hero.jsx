@@ -58,7 +58,7 @@ export default function Hero( {title, heroURL, isContactButton, thumbnail} ) {
                     }}>
                         {title}
                     </Typography>
-                    {isContactButton && <Button as={Link} to={'/contact'} primary>Get in Touch</Button> }
+                    {isContactButton && <Button as={Link} to={'/contact'} primary="true">Get in Touch</Button> }
                 </Box>
             </Box>
         </>

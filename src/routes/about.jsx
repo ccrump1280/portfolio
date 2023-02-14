@@ -2,7 +2,8 @@ import Hero from '../sections/Hero'
 import HomeHeroBackground from '../assets/home-hero-background.jpg'
 import AvatarImage from '../assets/avatar-image.jpg'
 import { Box, Typography } from '@mui/material'
-import { StyledLink } from '../StyledComponents'
+import { Button } from '../StyledComponents'
+import { Link } from 'react-router-dom';
 
 export default function About(){
     return (
@@ -28,9 +29,8 @@ export default function About(){
                     eu augue ut lectus arcu bibendum at varius. Dolor magna eget est lorem ipsum dolor sit amet. Tellus mauris a diam maecenas sed enim ut. 
                     Lorem donec massa sapien faucibus et. Mauris cursus mattis molestie a iaculis at erat. Sit amet consectetur adipiscing elit.
                 </Typography>
-            </Box>
-            
-            <StyledLink to={'/contact'} primary>Contact Me</StyledLink>
+                <Button as={Link} to={'/contact'}>Contact Me</Button>
+            </Box>   
         </>
     )
 }

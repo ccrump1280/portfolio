@@ -1,10 +1,11 @@
-import { Drawer, Box, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { StyledLink, Button } from '../StyledComponents';
+import { Drawer, Box, List, ListItem, ListItemText } from '@mui/material';
+import { Button } from '../StyledComponents';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import { Link } from 'react-router-dom';
 
 export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
 
@@ -55,37 +56,37 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                                     sx={{pl: '15px'}} 
                                     onClick={toggleMobileMenu(false)}
                                 >
-                                    <StyledLink to={'/category/shopify'}>
+                                    <Button as={Link} to={'/category/shopify'}>
                                         <ListItemText primary="Shopify Stores"/>
-                                    </StyledLink>
+                                    </Button>
                                 </ListItem>
                                 <ListItem 
                                     sx={{pl: '15px'}}
                                     onClick={toggleMobileMenu(false)}
                                 >
-                                    <StyledLink to={'/category/react'}>
+                                    <Button as={Link} to={'/category/react'}>
                                         <ListItemText primary="React Apps"/>
-                                    </StyledLink>
+                                    </Button>
                                 </ListItem>
                                 <ListItem 
                                     sx={{pl: '15px'}}
                                     onClick={toggleMobileMenu(false)}
                                 >
-                                    <StyledLink to={'/category/frontend'}>
+                                    <Button as={Link} to={'/category/frontend'}>
                                         <ListItemText primary="Front End Development"/>
-                                    </StyledLink>
+                                    </Button>
                                 </ListItem>        
                             </List>
                         </Collapse>
                         <ListItem disablePadding onClick={toggleMobileMenu(false)}>
-                            <StyledLink to={'/about'}>
+                            <Button as={Link} to={'/about'}>
                                 <ListItemText primary="About"/>
-                            </StyledLink>
+                            </Button>
                         </ListItem>
                         <ListItem disablePadding onClick={toggleMobileMenu(false)}>
-                            <StyledLink to={'/contact'}>
+                            <Button as={Link} to={'/contact'}>
                                 <ListItemText primary="Contact"/>
-                            </StyledLink>
+                            </Button>
                         </ListItem>
                     </List>
                 </Box>

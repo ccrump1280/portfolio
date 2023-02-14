@@ -5,13 +5,7 @@ export const CATEGORY_DATA = {
     },
     shopify: {
         title: "Shopify Store",
-        projects: [
-            {
-                id: "coffeekit",
-                thumbnailURL: '/src/assets/coffee-kit-thumbnail.jpg',
-                route: '/project/coffeekit'
-            }
-        ]
+        projects: ["coffeekit", "twoclothes"]
     },
     frontend: {
         title: "Front End Devlopment",
@@ -19,13 +13,7 @@ export const CATEGORY_DATA = {
     },
     recent: {
         title: "Latest Work",
-        projects: [
-            {
-                id: "coffeekit",
-                thumbnailURL: '/src/assets/coffee-kit-thumbnail.jpg',
-                route: '/project/coffeekit'
-            }
-        ]
+        projects: ["coffeekit", "twoclothes"]
     }
 }
 
@@ -33,6 +21,11 @@ export const PROJECT_DATA = {
     coffeekit: {
         title: "Coffee Kit",
         heroURL: "/src/assets/coffee-kit-hero.jpg",
-        thumbnail: "/src/assets/coffee-kit-thumbnail.jpg" 
+        thumbnailURL: "/src/assets/coffee-kit-thumbnail.jpg",
+    },
+    twoclothes: {
+        title: "Two Clothes",
+        heroURL: "/src/assets/two-clothes-hero.jpg",
+        thumbnailURL: "/src/assets/two-clothes-thumbnail.jpg"
     }
 }

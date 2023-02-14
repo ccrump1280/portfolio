@@ -1,6 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import styles from './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import styles from './index.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import {
@@ -17,7 +17,7 @@ import ErrorPage from './error-page'
 
 const theme = createTheme();
 theme.typography.fontFamily = 'Lato';
-theme.typography.body1.margin = '1rem 1rem';
+theme.typography.body1.margin = '16px';
 
 const router = createBrowserRouter([
   {

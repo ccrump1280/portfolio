@@ -1,5 +1,4 @@
 import styled, {css} from 'styled-components';
-import {Link} from 'react-router-dom';
 
 export const Button = styled.button `
     color: #3EB489;
@@ -35,15 +34,4 @@ export const TextArea = styled.textarea `
     &::placeholder {
         font-size: 1rem;
     }
-`
-export const StyledLink = styled(Link) `
-    color: #3EB489;
-    text-decoration: none;
-
-    ${ props => props.primary && css `
-        border: 1px solid #3EB489;
-        font-size: 1rem;
-        padding: 0.7rem;
-        border-radius: 4px;
-    `};
 `

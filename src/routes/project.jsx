@@ -13,7 +13,7 @@ export default function Project() {
 
     return (
         <>
-            <Hero thumbnail={projectData.thumbnailURL} heroURL={projectData.heroURL}/>
+            <Hero thumbnailURL={projectData.thumbnailURL} heroURL={projectData.heroURL}/>
             <Typography variant="h3">{projectData.title}</Typography>
             <Box>
                 {projectData.content}

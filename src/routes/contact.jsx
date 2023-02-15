@@ -22,8 +22,8 @@ export default function Contact(){
                 <Input type="text" name="user_email" placeholder="Enter your email adress" />
                 <Typography variant="body2" >Message</Typography>
                 <TextArea name="message" rows="8" placeholder="Example Text"></TextArea>
+                <Button primary="true" type="submit" form="contact-form" value="Submit" style={{marginTop:'0.5rem'}}>Submit</Button>
             </form>
-            <Button primary type="submit" form="contact-form" value="Submit">Submit</Button>
         </>
     )
 }

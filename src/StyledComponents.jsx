@@ -8,6 +8,7 @@ export const Button = styled.button `
     padding: 0;
     display: block;
     width: fit-content;
+    margin: 0 1.5rem;
     ${ props => props.primary && css `
         border: 1px solid #3EB489;
         font-size: 1rem;

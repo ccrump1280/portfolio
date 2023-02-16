@@ -2,26 +2,35 @@ import Hero from '../sections/Hero';
 import { useRef } from 'react';
 import { Input, Button, TextArea } from '../StyledComponents';
 import { Typography } from '@mui/material';
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 export default function Contact(){
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
     }
-    const mediaMatch = window.matchMedia('(min-width: 600px)');
-    const [matches, setMatches] = useState(mediaMatch.matches);
+
+    const tablet = window.matchMedia('(min-width: 600px)');
+    const desktop = window.matchMedia('(min-width: 900px)');
+    const [isTablet, setIsTablet] = useState(tablet.matches);
+    const [isDesktop, setIsDesktop] = useState(desktop.matches);
   
     useEffect(() => {
-      const handler = e => setMatches(e.matches);
-      mediaMatch.addEventListener("change", handler);
-      return () => mediaMatch.removeEventListener("change", handler);
+      const handler = e => setIsTablet(e.matches);
+      tablet.addEventListener("change", handler);
+      return () => tablet.removeEventListener("change", handler);
     });
+
+    useEffect(() => {
+        const handler = e => setIsDesktop(e.matches);
+        desktop.addEventListener("change", handler);
+        return () => desktop.removeEventListener("change", handler);
+      });
 
     return (
         <>
-            <Hero title="Reach out! Let's start something together." heroURL= '/assets/home-hero-background.jpg' />
-            <form ref={form} onSubmit={sendEmail} id="contact-form" style={styles.form(matches)}>
+            <Hero title="Reach out! Let's start something together." heroURL= {isDesktop ? '/assets/home-hero-background-desktop.jpg' : '/assets/home-hero-background.jpg'} />
+            <form ref={form} onSubmit={sendEmail} id="contact-form" style={styles.form(isTablet)}>
                 <Typography variant="body2">Name</Typography>
                 <Input type="text" name="user_name" placeholder="Enter your name" />
                 <Typography variant="body2" >Email</Typography>
@@ -34,8 +43,9 @@ export default function Contact(){
     )
 }
 const styles = {
-    form: isMatch => ({
-        width: isMatch ? '70%' : '95%',
+    form: isTablet => ({
+        width: isTablet ? '70%' : '95%',
+        maxWidth: '700px',
         textAlign: 'left',
         margin: 'auto'
     })

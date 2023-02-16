@@ -22,11 +22,13 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
             <Box sx ={{
                 backgroundImage: `linear-gradient(180deg, rgba(34,34,34,0.5) 0%, rgba(34,34,34,1) 100%), url(${heroURL})`,
                 backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 width: '100%',
                 padding: '1rem 1rem',
                 marginBottom: '2rem',
                 boxSizing: 'border-box',
-                minHeight: '300px'
+                minHeight: {xs:'300px', sm:'500px'},
+                position: 'relative'
             }}>
                 <Box sx = {{
                     display: 'flex',
@@ -53,7 +55,15 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
                     </Box>
                     <MenuRoundedIcon sx={{display:{xs:'block', sm:'none'}}} onClick={toggleMobileMenu(true)}/>
                 </Box>
-                <Box sx={{mt:'3rem'}}>
+                <Box 
+                    sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translateX(-50%) translateY(-50%)',
+                        width: '80%'
+                    }}
+                >
                     {thumbnailURL && <img 
                         src={thumbnailURL} 
                         style={{

@@ -6,9 +6,19 @@ export default function ThumbnailGrid({projectData}){
 
     return (
         <>
-            <Box sx={{padding: "0 2rem"}}>
+            <Box 
+                sx={{padding: "0 2rem",}}
+            >
                 <Typography variant='h5' sx={{mb:"2rem"}}>Latest Work</Typography>
-                <Grid container spacing={2}>
+                <Grid 
+                    container 
+                    spacing={2} 
+                    sx={{
+                        width:{xs:'100%', sm:'90%'},
+                        maxWidth: '1000px',
+                        margin: 'auto'
+                    }}
+                >
                     {projectData.projects.map((projectId) => {
                         const project = PROJECT_DATA[projectId];
                         return (

@@ -1,15 +1,13 @@
-import Hero from '../sections/Hero'
-import AboutHeroBackground from '../assets/about-hero-background.jpg'
-import AvatarImage from '../assets/avatar-image.jpg'
-import { Box, Typography } from '@mui/material'
-import { Button } from '../StyledComponents'
+import Hero from '../sections/Hero';
+import { Box, Typography } from '@mui/material';
+import { Button } from '../StyledComponents';
 import { Link } from 'react-router-dom';
 
 export default function About(){
     return (
         <>
-            <Hero title="A little about me." heroURL = {AboutHeroBackground}/>
-            <img src={ AvatarImage } style={{
+            <Hero title="A little about me." heroURL = '/public/assets/about-hero-background.jpg'/>
+            <img src='/public/assets/avatar-image.jpg' style={{
                 borderRadius:"100%",
                 width: '200px',
                 }} />

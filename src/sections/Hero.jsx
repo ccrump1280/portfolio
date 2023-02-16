@@ -24,16 +24,16 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
                 backgroundSize: 'cover',
                 width: '100%',
                 padding: '1rem 1rem',
-                paddingBottom: '3rem',
+                marginBottom: '2rem',
                 boxSizing: 'border-box',
-                height: {md:'40vh'}
+                minHeight: '300px'
             }}>
                 <Box sx = {{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     position: 'relative',
-                    width: {xs:'100%', md:'70%'},
+                    width: {xs:'100%', sm:'80%'},
                     margin: 'auto'
                 }}>
                     <Link 
@@ -45,22 +45,29 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
                     >
                         <Typography variant="h5">Connor Crump</Typography>
                     </Link>
-                    <Box sx={{display:{xs:'none', md:'flex'}}}
+                    <Box sx={{display:{xs:'none', sm:'flex'}}}
                     >
                         <Button as={Link} to={'/'}>Portfolio</Button>
                         <Button as={Link} to={'/about'}>About</Button>
                         <Button as={Link} to={'/contact'}>Contact</Button>
                     </Box>
-                    <MenuRoundedIcon sx={{display:{xs:'block', md:'none'}}} onClick={toggleMobileMenu(true)}/>
+                    <MenuRoundedIcon sx={{display:{xs:'block', sm:'none'}}} onClick={toggleMobileMenu(true)}/>
                 </Box>
                 <Box sx={{mt:'3rem'}}>
-                    {thumbnailURL && <img src={thumbnailURL} style={{width: '70%', borderRadius:'4px'}}/>}
-                    <Typography variant="h4" sx={{
+                    {thumbnailURL && <img 
+                        src={thumbnailURL} 
+                        style={{
+                            width:'60%',
+                            maxWidth: "400px", 
+                            borderRadius:'4px'
+                        }}
+                    />}
+                    {title && <Typography variant="h4" sx={{
                         lineHeight: '2.2rem',
                         mb:"1.5rem",
                     }}>
                         {title}
-                    </Typography>
+                    </Typography>}
                     {isContactButton && <Button as={Link} to={'/contact'} primary="true">Get in Touch</Button> }
                 </Box>
             </Box>

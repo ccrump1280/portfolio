@@ -1,21 +1,27 @@
-import Hero from '../sections/Hero'
-import { useRef } from 'react'
-import HomeHeroBackground from '../assets/home-hero-background.jpg'
-import { Input, Button, TextArea } from '../StyledComponents'
-import { Typography } from '@mui/material'
+import Hero from '../sections/Hero';
+import { useRef } from 'react';
+import { Input, Button, TextArea } from '../StyledComponents';
+import { Typography } from '@mui/material';
+import React, {useEffect, useState} from 'react';
 
 export default function Contact(){
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
     }
+    const mediaMatch = window.matchMedia('(min-width: 600px)');
+    const [matches, setMatches] = useState(mediaMatch.matches);
+  
+    useEffect(() => {
+      const handler = e => setMatches(e.matches);
+      mediaMatch.addEventListener("change", handler);
+      return () => mediaMatch.removeEventListener("change", handler);
+    });
+
     return (
         <>
-            <Hero title="Reach out! Let's start something together." heroURL= { HomeHeroBackground } />
-            <form ref={form} onSubmit={sendEmail} id="contact-form" style={{
-                padding: "1rem",
-                textAlign: "left"
-            }}>
+            <Hero title="Reach out! Let's start something together." heroURL= '/public/assets/home-hero-background.jpg' />
+            <form ref={form} onSubmit={sendEmail} id="contact-form" style={styles.form(matches)}>
                 <Typography variant="body2">Name</Typography>
                 <Input type="text" name="user_name" placeholder="Enter your name" />
                 <Typography variant="body2" >Email</Typography>
@@ -26,4 +32,11 @@ export default function Contact(){
             </form>
         </>
     )
+}
+const styles = {
+    form: isMatch => ({
+        width: isMatch ? '70%' : '95%',
+        textAlign: 'left',
+        margin: 'auto'
+    })
 }

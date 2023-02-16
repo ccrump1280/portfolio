@@ -1,6 +1,5 @@
 import Hero from '../sections/Hero'
 import { useLoaderData } from "react-router-dom"
-import HomeHeroBackground from "../assets/home-hero-background.jpg"
 import { CATEGORY_DATA } from '../projects'
 import ThumbnailGrid from '../sections/ThumbnailGrid'
 
@@ -13,7 +12,7 @@ export default function Category() {
     const heroTitle = `All ${categoryData.title} Projects`;
     return (
         <>
-            <Hero title={heroTitle} heroURL={HomeHeroBackground}/>
+            <Hero title={heroTitle} heroURL='/public/assets/home-hero-background.jpg'/>
             <ThumbnailGrid projectData={categoryData}/>
         </>
     )

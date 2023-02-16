@@ -1,7 +1,7 @@
 
 import Hero from '../sections/Hero'
 import ThumbnailGrid from '../sections/ThumbnailGrid'
-import HomeHeroBackground from '../assets/home-hero-background.jpg'
+import HomeHeroBackground from '/public/assets/home-hero-background.jpg'
 import { CATEGORY_DATA } from '../projects'
 
 export default function Root() {

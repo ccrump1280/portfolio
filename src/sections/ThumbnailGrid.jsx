@@ -6,13 +6,13 @@ export default function ThumbnailGrid({projectData}){
 
     return (
         <>
-            <Box sx={{padding: "0 1rem"}}>
+            <Box sx={{padding: "0 2rem"}}>
                 <Typography variant='h5' sx={{mb:"2rem"}}>Latest Work</Typography>
-                <Grid container spacing={1}>
+                <Grid container spacing={2}>
                     {projectData.projects.map((projectId) => {
                         const project = PROJECT_DATA[projectId];
                         return (
-                            <Grid item xs={12} md={4} key={projectId}>
+                            <Grid item xs={12} sm={4} key={projectId}>
                                 <Link to={`/project/${projectId}`}>
                                     <img
                                         src={project.thumbnailURL}

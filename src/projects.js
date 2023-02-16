@@ -5,7 +5,7 @@ export const CATEGORY_DATA = {
     },
     shopify: {
         title: "Shopify Store",
-        projects: ["coffeekit", "twoclothes"]
+        projects: ["coffeekit", "twoclothes", "galaxybox"]
     },
     frontend: {
         title: "Front End Devlopment",
@@ -13,7 +13,7 @@ export const CATEGORY_DATA = {
     },
     recent: {
         title: "Latest Work",
-        projects: ["coffeekit", "twoclothes"]
+        projects: ["coffeekit", "twoclothes", "galaxybox"]
     }
 }
 
@@ -27,5 +27,10 @@ export const PROJECT_DATA = {
         title: "Two Clothes",
         heroURL: "/assets/two-clothes-hero.jpg",
         thumbnailURL: "/assets/two-clothes-thumbnail.jpg"
+    },
+    galaxybox: {
+        title: "Galaxy Box",
+        heroURL: "/assets/galaxy-box-hero.jpg",
+        thumbnailURL: "/assets/galaxy-box-thumbnail.jpg"
     }
 }

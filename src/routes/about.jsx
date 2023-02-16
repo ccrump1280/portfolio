@@ -12,7 +12,13 @@ export default function About(){
                 width: '200px',
                 }} />
 
-            <Box sx={{mb:'2rem'}}>
+            <Box 
+                sx={{
+                    width: {xs:'100%', sm:'90%'},
+                    maxWidth: '800px',
+                    margin: '2rem auto'
+                }}
+            >
                 <Typography variant="body1">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc 
                     mi ipsum faucibus vitae aliquet. Proin libero nunc consequat interdum varius. Non curabitur gravida arcu ac tortor. A iaculis at erat 

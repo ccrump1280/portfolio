@@ -20,7 +20,7 @@ export default function Contact(){
 
     return (
         <>
-            <Hero title="Reach out! Let's start something together." heroURL= '/public/assets/home-hero-background.jpg' />
+            <Hero title="Reach out! Let's start something together." heroURL= '/assets/home-hero-background.jpg' />
             <form ref={form} onSubmit={sendEmail} id="contact-form" style={styles.form(matches)}>
                 <Typography variant="body2">Name</Typography>
                 <Input type="text" name="user_name" placeholder="Enter your name" />

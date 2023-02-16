@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 export default function About(){
     return (
         <>
-            <Hero title="A little about me." heroURL = '/public/assets/about-hero-background.jpg'/>
-            <img src='/public/assets/avatar-image.jpg' style={{
+            <Hero title="A little about me." heroURL = '/assets/about-hero-background.jpg'/>
+            <img src='/assets/avatar-image.jpg' style={{
                 borderRadius:"100%",
                 width: '200px',
                 }} />

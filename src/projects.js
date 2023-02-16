@@ -20,12 +20,12 @@ export const CATEGORY_DATA = {
 export const PROJECT_DATA = {
     coffeekit: {
         title: "Coffee Kit",
-        heroURL: "/public/assets/coffee-kit-hero.jpg",
-        thumbnailURL: "/public/assets/coffee-kit-thumbnail.jpg",
+        heroURL: "/assets/coffee-kit-hero.jpg",
+        thumbnailURL: "/assets/coffee-kit-thumbnail.jpg",
     },
     twoclothes: {
         title: "Two Clothes",
-        heroURL: "/public/assets/two-clothes-hero.jpg",
-        thumbnailURL: "/public/assets/two-clothes-thumbnail.jpg"
+        heroURL: "/assets/two-clothes-hero.jpg",
+        thumbnailURL: "/assets/two-clothes-thumbnail.jpg"
     }
 }

@@ -12,7 +12,7 @@ export default function Category() {
     const heroTitle = `All ${categoryData.title} Projects`;
     return (
         <>
-            <Hero title={heroTitle} heroURL='/public/assets/home-hero-background.jpg'/>
+            <Hero title={heroTitle} heroURL='/assets/home-hero-background.jpg'/>
             <ThumbnailGrid projectData={categoryData}/>
         </>
     )

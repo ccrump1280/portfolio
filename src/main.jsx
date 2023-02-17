@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import styles from './index.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -11,13 +11,13 @@ import {
 import Root from './routes/root'
 import About from './routes/about'
 import Contact from './routes/contact'
-import Category, {loader as categoryLoader} from './routes/category'
 import Project from './routes/project'
 import ErrorPage from './error-page'
 
 const theme = createTheme();
 theme.typography.fontFamily = 'Lato';
 theme.typography.body1.margin = '16px';
+ 
 
 const router = createBrowserRouter([
   {
@@ -36,22 +36,27 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   },
   {
-    path: "category/:categoryId",
-    element: <Category />,
-    errorElement: <ErrorPage />,
-    loader: categoryLoader
-  },
-  {
     path: "project/:projectId",
     element: <Project />,
     errorElement: <ErrorPage />,
   }
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <ThemeProvider theme={ theme }>
-      <RouterProvider router = {router} />
-    </ThemeProvider>
-  </React.StrictMode>,
-)
+export const CategoryContext = React.createContext(null);
+
+const App = () => {
+  const [category, setCategory] = useState('recent');
+
+  return (
+    <React.StrictMode>
+      <ThemeProvider theme={ theme }>
+        <CategoryContext.Provider value={{ category: category, setCategory: setCategory}}>
+          <RouterProvider router = {router}/>
+        </CategoryContext.Provider>
+      </ThemeProvider>
+    </React.StrictMode>
+  )
+};
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)

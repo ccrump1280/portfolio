@@ -2,7 +2,7 @@ import { Box, Typography, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { PROJECT_DATA } from '../projects';
 
-export default function ThumbnailGrid({projectData}){
+export default function ThumbnailGrid({category}){
 
     return (
         <>
@@ -12,7 +12,7 @@ export default function ThumbnailGrid({projectData}){
                     mb:'2rem'
             }}
             >
-                <Typography variant='h5' sx={{mb:"2rem"}}>Latest Work</Typography>
+                <Typography variant='h5' sx={{mb:"2rem"}}>{category.title}</Typography>
                 <Grid 
                     container 
                     spacing={2} 
@@ -22,7 +22,7 @@ export default function ThumbnailGrid({projectData}){
                         margin: 'auto'
                     }}
                 >
-                    {projectData.projects.map((projectId) => {
+                    {category.projects.map((projectId) => {
                         const project = PROJECT_DATA[projectId];
                         return (
                             <Grid item xs={12} sm={4} key={projectId}>

@@ -1,7 +1,9 @@
 import Hero from '../sections/Hero';
+import ThumbnailGrid from '../sections/ThumbnailGrid';
 import { Box, Typography } from '@mui/material';
 import { Button } from '../StyledComponents';
 import { Link } from 'react-router-dom';
+import { CATEGORY_DATA } from '../projects';
 
 export default function About(){
     return (
@@ -34,7 +36,8 @@ export default function About(){
                     Lorem donec massa sapien faucibus et. Mauris cursus mattis molestie a iaculis at erat. Sit amet consectetur adipiscing elit.
                 </Typography>
                 <Button as={Link} to={'/contact'} primary="true">Contact Me</Button>
-            </Box>   
+            </Box>
+            <ThumbnailGrid category={CATEGORY_DATA['recent']}/>
         </>
     )
 }

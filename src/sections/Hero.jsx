@@ -1,4 +1,4 @@
-import { autocompleteClasses, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { useState } from 'react';
 import MobileMenu from './MobileMenu';
@@ -27,7 +27,7 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
                 padding: '1rem 1rem',
                 marginBottom: '2rem',
                 boxSizing: 'border-box',
-                minHeight: {xs:'300px', sm:'500px'},
+                minHeight: {xs:'400px', sm:'500px'},
                 position: 'relative'
             }}>
                 <Box sx = {{
@@ -67,9 +67,10 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
                     {thumbnailURL && <img 
                         src={thumbnailURL} 
                         style={{
-                            width:'60%',
+                            width:'65%',
                             maxWidth: "400px", 
-                            borderRadius:'4px'
+                            borderRadius:'4px',
+                            marginTop: '15px'
                         }}
                     />}
                     {title && <Typography variant="h4" sx={{

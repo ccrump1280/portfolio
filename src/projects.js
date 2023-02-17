@@ -1,10 +1,10 @@
 export const CATEGORY_DATA = {
     react: {
-        title: "React App",
+        title: "React Apps",
         projects: []
     },
     shopify: {
-        title: "Shopify Store",
+        title: "Shopify Stores",
         projects: ["coffeekit", "twoclothes", "galaxybox"]
     },
     frontend: {

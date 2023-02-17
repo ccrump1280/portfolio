@@ -5,12 +5,14 @@ import { CATEGORY_DATA } from '../projects';
 import {useEffect, useState} from 'react';
 import { Box } from '@mui/material';
 import { Button } from '../StyledComponents';
+import { CategoryContext } from '../main';
+import { useContext } from 'react';
 
 export default function Root() {
     const homeTitle = "Helping create a beautiful store for your brand"
     const mediaMatch = window.matchMedia('(min-width: 900px)');
     const [matches, setMatches] = useState(mediaMatch.matches);
-    const [category, setCategory] = useState('recent');
+    const { category, setCategory } = useContext(CategoryContext);
   
     useEffect(() => {
       const handler = e => setMatches(e.matches);
@@ -33,7 +35,7 @@ export default function Root() {
                 <Button primary='true' onClick={()=>setCategory('frontend')}>Front End Development</Button>
                 <Button primary='true' onClick={()=>setCategory('recent')}>Recent Projects</Button>
             </Box>
-            <ThumbnailGrid projectData={CATEGORY_DATA[category]} />
+            <ThumbnailGrid category={CATEGORY_DATA[category]} />
         </>
     )
 }

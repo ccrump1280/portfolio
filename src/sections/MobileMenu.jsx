@@ -1,19 +1,21 @@
 import { Drawer, Box, List, ListItem, ListItemText } from '@mui/material';
 import { Button } from '../StyledComponents';
 import CloseIcon from '@mui/icons-material/Close';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 import { Link } from 'react-router-dom';
+import { CategoryContext } from '../main';
 
 export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
-
+    const { category, setCategory } = useContext(CategoryContext);
     const [tabOpen, setTabOpen] = useState(true);
 
     const handleClick = () => {
         setTabOpen(!tabOpen);
     }
+
     return (
         <>
             <Drawer 
@@ -55,22 +57,29 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                                 <ListItem  
                                     onClick={toggleMobileMenu(false)}
                                 >
-                                    <Button as={Link} to={'/category/shopify'}>
-                                        <ListItemText primary="Shopify Stores"/>
+                                    <Button as={Link} to={'/'}>
+                                        <ListItemText primary="Shopify Stores" onClick={() => setCategory('shopify')}/>
                                     </Button>
                                 </ListItem>
                                 <ListItem 
                                     onClick={toggleMobileMenu(false)}
                                 >
-                                    <Button as={Link} to={'/category/react'}>
-                                        <ListItemText primary="React Apps"/>
+                                    <Button as={Link} to={'/'}>
+                                        <ListItemText primary="React Apps" onClick={() => setCategory('react')} />
                                     </Button>
                                 </ListItem>
                                 <ListItem 
                                     onClick={toggleMobileMenu(false)}
                                 >
-                                    <Button as={Link} to={'/category/frontend'}>
-                                        <ListItemText primary="Front End Development"/>
+                                    <Button as={Link} to={'/'}>
+                                        <ListItemText primary="Front End Development" onClick={() => setCategory('frontend')}/>
+                                    </Button>
+                                </ListItem>
+                                <ListItem 
+                                    onClick={toggleMobileMenu(false)}
+                                >
+                                    <Button as={Link} to={'/'}>
+                                        <ListItemText primary="Recent Projects" onClick={() => setCategory('recent')}/>
                                     </Button>
                                 </ListItem>        
                             </List>

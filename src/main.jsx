@@ -17,6 +17,7 @@ import ErrorPage from './error-page'
 const theme = createTheme();
 theme.typography.fontFamily = 'Lato';
 theme.typography.body1.margin = '16px';
+theme.typography.h6.color = 'white';
  
 
 const router = createBrowserRouter([
@@ -49,7 +50,7 @@ const App = () => {
 
   return (
     <React.StrictMode>
-      <ThemeProvider theme={ theme }>
+      <ThemeProvider theme={theme}>
         <CategoryContext.Provider value={{ category: category, setCategory: setCategory}}>
           <RouterProvider router = {router}/>
         </CategoryContext.Provider>
@@ -58,5 +59,5 @@ const App = () => {
   )
 };
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

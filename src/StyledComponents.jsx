@@ -15,6 +15,11 @@ export const Button = styled.button `
         padding: 0.7rem;
         border-radius: 4px;
         margin: auto;
+
+        &:hover {
+            background: #3EB489;
+            color: white; 
+        }
     `};
 ` 
 

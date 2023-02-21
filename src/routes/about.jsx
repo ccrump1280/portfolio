@@ -1,6 +1,6 @@
 import Hero from '../sections/Hero';
 import ThumbnailGrid from '../sections/ThumbnailGrid';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Fade } from '@mui/material';
 import { Button } from '../StyledComponents';
 import { Link } from 'react-router-dom';
 import { CATEGORY_DATA } from '../projects';
@@ -9,10 +9,16 @@ export default function About(){
     return (
         <>
             <Hero title="A little about me." heroURL = '/assets/about-hero-background.jpg'/>
-            <img src='/assets/avatar-image.jpg' style={{
-                borderRadius:"100%",
-                width: '200px',
-                }} />
+            <Fade in={true} timeout={1200}>
+                <img 
+                    src='/assets/avatar-image.jpg' 
+                    style={{
+                        borderRadius:"100%",
+                        width: '200px',
+                    }} 
+                />
+            </Fade>
+            
 
             <Box 
                 sx={{

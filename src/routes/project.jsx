@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Hero from '../sections/Hero'
 import { Typography, Box } from '@mui/material';
 import ThumbnailGrid from '../sections/ThumbnailGrid';
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useLayoutEffect} from 'react';
 
 export async function loader({params}) {
     return params.projectId;
@@ -19,6 +19,10 @@ export default function Project() {
         const handler = e => setMdMatches(e.matches);
         md.addEventListener("change", handler);
         return () => md.removeEventListener("change", handler);
+    });
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
     });
 
     return (

@@ -2,7 +2,7 @@ import { Box, Typography, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { PROJECT_DATA } from '../projects';
 
-export default function ThumbnailGrid({category}){
+export default function ThumbnailGrid({category, exclude}){
 
     return (
         <>
@@ -23,6 +23,9 @@ export default function ThumbnailGrid({category}){
                     }}
                 >
                     {category.projects.map((projectId) => {
+                        if (projectId == exclude){
+                            return;
+                        }
                         const project = PROJECT_DATA[projectId];
                         return (
                             <Grid item xs={12} sm={4} key={projectId}>

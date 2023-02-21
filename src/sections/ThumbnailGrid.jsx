@@ -1,4 +1,4 @@
-import { Box, Typography, Grid } from '@mui/material';
+import { Box, Typography, Grid, Fade } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { PROJECT_DATA } from '../projects';
 
@@ -30,11 +30,13 @@ export default function ThumbnailGrid({category, exclude}){
                         return (
                             <Grid item xs={12} sm={4} key={projectId}>
                                 <Link to={`/project/${projectId}`}>
-                                    <img
-                                        src={project.thumbnailURL}
-                                        width='100%'
-                                        style={{borderRadius: "4px"}}
-                                    />
+                                    <Fade in={true} timeout={1000}>
+                                        <img
+                                            src={project.thumbnailURL}
+                                            width='100%'
+                                            style={{borderRadius: "4px"}}
+                                        />
+                                    </Fade>
                                 </Link>
                             </Grid>
                         )

@@ -12,13 +12,13 @@ export async function loader({params}) {
 export default function Project() {
     const { projectId } = useParams();
     const projectData = PROJECT_DATA[projectId];
-    const sm = window.matchMedia('(min-width: 600px)');
-    const [smMatches, setSmMatches] = useState(sm.matches);
+    const md = window.matchMedia('(min-width: 900px)');
+    const [mdMatches, setMdMatches] = useState(md.matches);
 
     useEffect(() => {
-        const handler = e => setSmMatches(e.matches);
-        sm.addEventListener("change", handler);
-        return () => sm.removeEventListener("change", handler);
+        const handler = e => setMdMatches(e.matches);
+        md.addEventListener("change", handler);
+        return () => md.removeEventListener("change", handler);
     });
 
     return (
@@ -28,14 +28,14 @@ export default function Project() {
             <Box 
                 sx={{
                     margin: '30px auto',
-                    width: {xs:'100%', sm:'65%'},
+                    width: {xs:'100%', sm:'70%'},
                     maxWidth: '1000px'
                 }}
             >
                 <Typography variant="body1">{projectData.content.description}</Typography>
                 {projectData.content.sections.map((section) => {
                     let imageURLs;
-                    if (smMatches || !section.imageURLs.mobile) {
+                    if (mdMatches || !section.imageURLs.mobile) {
                         imageURLs = section.imageURLs.desktop;
                     }else {
                         imageURLs = section.imageURLs.mobile;

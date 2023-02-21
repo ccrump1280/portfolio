@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Fade } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { useState } from 'react';
 import MobileMenu from './MobileMenu';
@@ -19,6 +19,7 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
     return (
         <>  
             <MobileMenu isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
+            <Fade in={true} timeout={1200}>
             <Box sx ={{
                 backgroundImage: `linear-gradient(180deg, rgba(34,34,34,0.5) 0%, rgba(34,34,34,1) 100%), url(${heroURL})`,
                 backgroundSize: 'cover',
@@ -82,6 +83,8 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
                     {isContactButton && <Button as={Link} to={'/contact'} primary="true">Get in Touch</Button> }
                 </Box>
             </Box>
+            </Fade>
+            
         </>
     )
 }

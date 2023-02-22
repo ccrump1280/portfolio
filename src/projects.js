@@ -76,8 +76,8 @@ export const PROJECT_DATA = {
                     id:'1',
                     header:'As Seen On Instagram',
                     body: `This section takes an outfit from an instagram post and breaks it down into the individual products allowing the customer
-                            to easliy reacreate the outfit or a part of the outfit themselves. Clicking on a product generates its image, title, and price as
-                            well as a link to the product page.
+                            to easliy reacreate the outfit or a part of the outfit themselves. Clicking on an item of the outfit generates its image, title, 
+                            and price as well as a link to the product page.
                           `
                     ,
                     imageURLs: {
@@ -87,11 +87,26 @@ export const PROJECT_DATA = {
                 },
                 {
                     id:'2',
-                    header:'',
-                    body: ``,
+                    header:'Mega Menu',
+                    body: `Shopify makes it easy to create an appealing menu for your store. The mega menu allows navigation to a variety of product 
+                            collections while simultaneously advertising special products such as new arrivals.`,
                     imageURLs: {
-                        desktop: []
+                        desktop: ['/assets/two-clothes-content-2.png'],
+                        mobile: ['/assets/two-clothes-content-2-mobile.png']
                     }
+                },
+                {
+                    id:'3',
+                    header:'Product Filters',
+                    body: `Shopify allows for easy filtering of products to make searching for a particular product a smooth experience for the user. 
+                            For this store I set up filtering based on the availability, price, color and size of the product. Any property of a product
+                            defined in the stores backend can use this filtering system.
+                          `,
+                    imageURLs: {
+                        desktop: ['/assets/two-clothes-content-3.png'],
+                        mobile: ['/assets/two-clothes-content-3-mobile.png']
+                    }
+
                 }
             ]
         }

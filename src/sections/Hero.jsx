@@ -1,9 +1,10 @@
 import { Box, Typography, Fade } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MobileMenu from './MobileMenu';
 import { Link } from 'react-router-dom';
 import { Button } from '../StyledComponents';
+
 
 export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) {
     

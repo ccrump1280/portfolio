@@ -1,7 +1,7 @@
 import Hero from '../sections/Hero';
 import { useRef } from 'react';
 import { Input, Button, TextArea } from '../StyledComponents';
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import {useEffect, useState} from 'react';
 
 export default function Contact(){
@@ -28,7 +28,7 @@ export default function Contact(){
       });
 
     return (
-        <>
+        <Box sx={{mb:'2rem'}}>
             <Hero title="Reach out! Let's start something together." heroURL= {isDesktop ? '/assets/home-hero-background-desktop.jpg' : '/assets/home-hero-background.jpg'} />
             <form ref={form} onSubmit={sendEmail} id="contact-form" style={styles.form(isTablet)}>
                 <Typography variant="body2">Name</Typography>
@@ -39,7 +39,7 @@ export default function Contact(){
                 <TextArea name="message" rows="8" placeholder="Example Text"></TextArea>
                 <Button primary="true" type="submit" form="contact-form" value="Submit" style={{marginTop:'0.5rem'}}>Submit</Button>
             </form>
-        </>
+        </Box>
     )
 }
 const styles = {

@@ -114,6 +114,48 @@ export const PROJECT_DATA = {
     galaxybox: {
         title: "Galaxy Box",
         heroURL: "/assets/galaxy-box-hero.jpg",
-        thumbnailURL: "/assets/galaxy-box-thumbnail.jpg"
+        thumbnailURL: "/assets/galaxy-box-thumbnail.jpg",
+        content: {
+            description: `This project is a shopify store setup for the demo brand GalaxyBox. This product recreates the cosmos in the comfort of your 
+                          own home.
+                         `
+            ,
+            sections: [
+                {
+                    id:'1',
+                    header:'Third Party Review App Implementation',
+                    body:`For this store I implemented the third party app JudgeMe to allow the user to see and write reviews directly on the product page. 
+                            The review can include a display name, email address (kept private), rating, title, message and an optional picture or video.
+                          
+                    `,
+                    imageURLs: {
+                        desktop: ['/assets/galaxy-box-content-1.png', '/assets/galaxy-box-content-2.png']
+                    }
+                },
+                {
+                    id:'2',
+                    header:'Affiliate Product Page',
+                    body:`For this store I created an affiliate product page. This page has the same basic layout as the product page but instead of adding
+                            the product to the cart it links to the affiliate products page, in this case a product on Amazon.
+                    `,
+                    imageURLs: {
+                        desktop:['/assets/galaxy-box-content-3.png'],
+                        mobile:['/assets/galaxy-box-content-3-mobile.png/']
+                    }
+                },
+                {
+                    id: '3',
+                    header:'Customizable FAQ page',
+                    body: `I also created a fully customizable FAQ page for this store complete with headers and collapsible tabs. As the store owner,
+                            updating the questions, answers and even headers is a breeze within the Shopify customizer and the new information will 
+                            automatically have the correct styling.
+                    `,
+                    imageURLs: {
+                        desktop:['/assets/galaxy-box-content-4.png'],
+                        mobile:['/assets/galaxy-box-content-4-mobile.png']
+                    }
+                }
+            ]
+        }
     }
 }

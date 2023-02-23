@@ -56,7 +56,8 @@ export default function Project() {
                                             style={{
                                                 borderRadius: '4px',
                                                 maxWidth: '350px',
-                                                width: '90%'
+                                                width: '90%',
+                                                margin: '0 10px'
                                             }}
                                             key={imageURL}
                                         />

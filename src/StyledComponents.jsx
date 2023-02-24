@@ -22,6 +22,10 @@ export const Button = styled.button `
             cursor: pointer; 
         }
     `};
+    ${ props => props.isActive && css `
+        background: #3EB489;
+        color: white;
+    `};
 ` 
 
 export const Input = styled.input `

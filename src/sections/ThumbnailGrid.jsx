@@ -12,7 +12,7 @@ export default function ThumbnailGrid({category, exclude}){
                     mb:'2rem'
             }}
             >
-                <Typography variant='h5' sx={{mb:"2rem"}}>{category.title}</Typography>
+                <Typography variant='h5'>{category.title}</Typography>
                 <Grid 
                     container 
                     spacing={2} 

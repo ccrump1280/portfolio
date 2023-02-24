@@ -18,9 +18,6 @@ export default function Root() {
       mediaMatch.addEventListener("change", handler);
       return () => mediaMatch.removeEventListener("change", handler);
     });
-    useLayoutEffect(() => {
-        window.scrollTo(0, 0)
-    });
     
     return (
         <>
@@ -33,12 +30,12 @@ export default function Root() {
                     maxWidth: '900px'
                 }}
             > 
-                <Button primary='true' onClick={()=>setCategory('shopify')}>Shopify Stores</Button>
-                <Button primary='true' onClick={()=>setCategory('react')}>React Apps & Dynamic JS</Button>
-                <Button primary='true' onClick={()=>setCategory('frontend')}>Front End Development</Button>
-                <Button primary='true' onClick={()=>setCategory('recent')}>Recent Projects</Button>
+                <Button primary='true' onClick={() => setCategory('shopify')} isActive={category=='shopify'}>Shopify Stores</Button>
+                <Button primary='true' onClick={() => setCategory('react')} isActive={category=='react'}>React Apps & Dynamic JS</Button>
+                <Button primary='true' onClick={() => setCategory('frontend')} isActive={category=='frontend'}>Front End Development</Button>
+                <Button primary='true' onClick={() => setCategory('recent')} isActive={category=='recent'}>Recent Projects</Button>
             </Box>
-            <ThumbnailGrid category={CATEGORY_DATA[category]} />
+            <ThumbnailGrid key={category} category={CATEGORY_DATA[category]} />
         </>
     )
 }

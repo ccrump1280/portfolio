@@ -1,7 +1,7 @@
 export const CATEGORY_DATA = {
     react: {
-        title: "React Apps",
-        projects: []
+        title: "React Apps & Dynamic JS",
+        projects: ["youtube"]
     },
     shopify: {
         title: "Shopify Stores",
@@ -13,7 +13,7 @@ export const CATEGORY_DATA = {
     },
     recent: {
         title: "Latest Work",
-        projects: ["coffeekit", "twoclothes", "galaxybox"]
+        projects: ["coffeekit", "twoclothes", "galaxybox", "youtube"]
     }
 }
 
@@ -29,7 +29,7 @@ export const PROJECT_DATA = {
             ,
             sections: [
                 {
-                    id:"1",
+                    id:"coffee-kit-1",
                     header: "Variable Product Description",
                     body: `The first custom built feature for this store is a variable product description. The information is displayed in
                            a neat table with coffee bean icons showing the strength and acidity of the coffee. Whenever a new product is created 
@@ -44,7 +44,7 @@ export const PROJECT_DATA = {
                     }
                 },
                 {
-                    id:"2",
+                    id:"coffee-kit-2",
                     header: "Sliding Testimonial Section",
                     body: `The second custom built feature is a sliding testimonial using the CSS library slick slider. The slider has a 
                             responsive layout that always shows enough slides to fill the current screen size. 
@@ -73,7 +73,7 @@ export const PROJECT_DATA = {
             ,
             sections: [
                 {
-                    id:'1',
+                    id:'two-clothes-1',
                     header:'As Seen On Instagram',
                     body: `This section takes an outfit from an instagram post and breaks it down into the individual products allowing the customer
                             to easliy reacreate the outfit or a part of the outfit themselves. Clicking on an item of the outfit generates its image, title, 
@@ -86,7 +86,7 @@ export const PROJECT_DATA = {
                     }   
                 },
                 {
-                    id:'2',
+                    id:'two-clothes-2',
                     header:'Mega Menu',
                     body: `Shopify makes it easy to create an appealing menu for your store. The mega menu allows navigation to a variety of product 
                             collections while simultaneously advertising special products such as new arrivals.`,
@@ -96,7 +96,7 @@ export const PROJECT_DATA = {
                     }
                 },
                 {
-                    id:'3',
+                    id:'two-clothes-3',
                     header:'Product Filters',
                     body: `Shopify allows for easy filtering of products to make searching for a particular product a smooth experience for the user. 
                             For this store I set up filtering based on the availability, price, color and size of the product. Any property of a product
@@ -122,7 +122,7 @@ export const PROJECT_DATA = {
             ,
             sections: [
                 {
-                    id:'1',
+                    id:'galaxy-box-1',
                     header:'Third Party Review App Implementation',
                     body:`For this store I implemented the third party app JudgeMe to allow the user to see and write reviews directly on the product page. 
                             The review can include a display name, email address (kept private), rating, title, message and an optional picture or video.
@@ -133,7 +133,7 @@ export const PROJECT_DATA = {
                     }
                 },
                 {
-                    id:'2',
+                    id:'galaxy-box-2',
                     header:'Affiliate Product Page',
                     body:`For this store I created an affiliate product page. This page has the same basic layout as the product page but instead of adding
                             the product to the cart it links to the affiliate products page, in this case a product on Amazon.
@@ -144,7 +144,7 @@ export const PROJECT_DATA = {
                     }
                 },
                 {
-                    id: '3',
+                    id: 'galaxy-box-3',
                     header:'Customizable FAQ page',
                     body: `I also created a fully customizable FAQ page for this store complete with headers and collapsible tabs. As the store owner,
                             updating the questions, answers and even headers is a breeze within the Shopify customizer and the new information will 
@@ -153,6 +153,38 @@ export const PROJECT_DATA = {
                     imageURLs: {
                         desktop:['/assets/galaxy-box-content-4.png'],
                         mobile:['/assets/galaxy-box-content-4-mobile.png']
+                    }
+                }
+            ]
+        }
+    },
+    youtube: {
+        title: "Youtube API",
+        heroURL: '/assets/youtube-hero.png',
+        thumbnailURL: '/assets/youtube-thumbnail.png',
+        content: {
+            description: 'This project uses the YouTube API to recreate the video searching capabilites of the platform.',
+            sections: [
+                {
+                    id:'youtube-1',
+                    header:'Search Results',
+                    body: `Submitting a search retrieves the corresponding videos from the YouTube API. The results are displayed
+                            in a responsive grid that includes the video thumbnail, title, and channel.
+                    `,
+                    imageURLs: {
+                        desktop:['/assets/youtube-content-1.png'],
+                        mobile:['/assets/youtube-content-1-mobile.png']
+                    }
+                },
+                {
+                    id:'youtube-2',
+                    header:'Video Player',
+                    body: `Clicking on a video will hide the search results and create a video player directly on the page using iframe.
+                            The video can be watched in the application itself or the video has a link to watch on YouTube as well.`
+                    ,
+                    imageURLs: {
+                        desktop: ['/assets/youtube-content-2.png'],
+                        mobile:['/assets/youtube-content-2-mobile.png']
                     }
                 }
             ]

@@ -1,7 +1,7 @@
 export const CATEGORY_DATA = {
     react: {
         title: "React Apps & Dynamic JS",
-        projects: ["youtube"]
+        projects: ["youtube","upwork"]
     },
     shopify: {
         title: "Shopify Stores",
@@ -13,7 +13,7 @@ export const CATEGORY_DATA = {
     },
     recent: {
         title: "Latest Work",
-        projects: ["coffeekit", "twoclothes", "galaxybox", "youtube"]
+        projects: ["coffeekit", "twoclothes", "galaxybox", "youtube", "upwork"]
     }
 }
 
@@ -33,7 +33,7 @@ export const PROJECT_DATA = {
                     header: "Variable Product Description",
                     body: `The first custom built feature for this store is a variable product description. The information is displayed in
                            a neat table with coffee bean icons showing the strength and acidity of the coffee. Whenever a new product is created 
-                           for the store in the Shopify backend, the table is automatically filled with the correct infromation.
+                           for the store in the Shopify backend, the table is automatically filled with the correct information.
                           `
                     ,
                     imageURLs: {
@@ -184,10 +184,40 @@ export const PROJECT_DATA = {
                     ,
                     imageURLs: {
                         desktop: ['/assets/youtube-content-2.png'],
-                        mobile:['/assets/youtube-content-2-mobile.png']
+                        mobile: ['/assets/youtube-content-2-mobile.png']
                     }
                 }
             ]
+        }
+    },
+    upwork: {
+        title: "UpWork Job Board",
+        heroURL:"/assets/upwork-hero.png",
+        thumbnailURL: "/assets/upwork-thumbnail.png",
+        content: {
+            description:'This React App mimics the job board of Upwork. The project includes a login page, a job board page, and individual job pages.',
+            sections: [
+                {
+                    id: 'upwork-1',
+                    header: 'Login Page',
+                    body: `Created a login page for the app that routes to the jog boards page on successful login.`,
+                    imageURLs: {
+                        desktop: ['/assets/upwork-content-1.png'],
+                        mobile: ['/assets/upwork-content-1-mobile.png']
+                    }
+                },
+                {
+                    id: 'upwork-2',
+                    header: 'Job Board',
+                    body: `The job board page displays a listing of jobs each including a title, hourly rate, post time, location, and description.
+                            The page includes a categories tab that displays jobs that matches the chosen category. Clicking on any job routes to that job's
+                             description page.`,
+                    imageURLs: {
+                        desktop: ['/assets/upwork-content-2.png'],
+                        mobile: ['/assets/upwork-content-2-mobile.png']
+                    }
+                }
+            ],
         }
     }
 }

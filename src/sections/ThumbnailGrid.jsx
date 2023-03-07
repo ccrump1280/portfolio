@@ -28,7 +28,7 @@ export default function ThumbnailGrid({category, exclude}){
                         }
                         const project = PROJECT_DATA[projectId];
                         return (
-                            <Grid item xs={12} sm={4} key={projectId}>
+                            <Grid item xs={6} sm={4} key={projectId}>
                                 <Link to={`/project/${projectId}`}>
                                     <Fade in={true} timeout={1000}>
                                         <img

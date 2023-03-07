@@ -2,13 +2,14 @@
 import Hero from '../sections/Hero';
 import ThumbnailGrid from '../sections/ThumbnailGrid';
 import { CATEGORY_DATA } from '../projects';
-import {useEffect, useState, useContext, useLayoutEffect} from 'react';
+import {useEffect, useState, useContext} from 'react';
 import { Box } from '@mui/material';
 import { Button } from '../StyledComponents';
 import { CategoryContext } from '../main';
 
+
 export default function Root() {
-    const homeTitle = "Helping create a beautiful store for your brand"
+    const homeTitle = "Creating a beautiful store for your brand"
     const mediaMatch = window.matchMedia('(min-width: 900px)');
     const [matches, setMatches] = useState(mediaMatch.matches);
     const { category, setCategory } = useContext(CategoryContext);

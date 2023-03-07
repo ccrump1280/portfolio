@@ -47,7 +47,7 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                     />
                     <List sx={{color: '#3EB489'}}>
                         <ListItem onClick={handleClick}>
-                            <Button>
+                            <Button mobileButton={true}>
                                 <ListItemText primary="Portfolio"/>
                             </Button>
                             {tabOpen ? <ExpandLess /> : <ExpandMore />}
@@ -57,40 +57,40 @@ export default function MobileMenu( {isMobileMenuOpen, toggleMobileMenu} ) {
                                 <ListItem  
                                     onClick={toggleMobileMenu(false)}
                                 >
-                                    <Button as={Link} to={'/'}>
+                                    <Button mobileButton={true} as={Link} to={'/'}>
                                         <ListItemText primary="Shopify Stores" onClick={() => setCategory('shopify')}/>
                                     </Button>
                                 </ListItem>
                                 <ListItem 
                                     onClick={toggleMobileMenu(false)}
                                 >
-                                    <Button as={Link} to={'/'}>
+                                    <Button mobileButton={true} as={Link} to={'/'}>
                                         <ListItemText primary="React Apps" onClick={() => setCategory('react')} />
                                     </Button>
                                 </ListItem>
                                 <ListItem 
                                     onClick={toggleMobileMenu(false)}
                                 >
-                                    <Button as={Link} to={'/'}>
+                                    <Button mobileButton={true} as={Link} to={'/'}>
                                         <ListItemText primary="Front End Development" onClick={() => setCategory('frontend')}/>
                                     </Button>
                                 </ListItem>
                                 <ListItem 
                                     onClick={toggleMobileMenu(false)}
                                 >
-                                    <Button as={Link} to={'/'}>
+                                    <Button mobileButton={true} as={Link} to={'/'}>
                                         <ListItemText primary="Recent Projects" onClick={() => setCategory('recent')}/>
                                     </Button>
                                 </ListItem>        
                             </List>
                         </Collapse>
                         <ListItem onClick={toggleMobileMenu(false)}>
-                            <Button as={Link} to={'/about'}>
+                            <Button mobileButton={true} as={Link} to={'/about'}>
                                 <ListItemText primary="About"/>
                             </Button>
                         </ListItem>
                         <ListItem onClick={toggleMobileMenu(false)}>
-                            <Button as={Link} to={'/contact'}>
+                            <Button mobileButton={true} as={Link} to={'/contact'}>
                                 <ListItemText primary="Contact"/>
                             </Button>
                         </ListItem>

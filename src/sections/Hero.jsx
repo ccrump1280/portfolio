@@ -4,6 +4,7 @@ import { useState } from 'react';
 import MobileMenu from './MobileMenu';
 import { Link } from 'react-router-dom';
 import { Button } from '../StyledComponents';
+import { useLocation } from 'react-router-dom';
 
 
 export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) {
@@ -16,6 +17,7 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
         }
         setIsMobileMenuOpen(isOpen);
     };
+    const route = useLocation().pathname;
 
     return (
         <>  
@@ -51,9 +53,9 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
                     </Link>
                     <Box sx={{display:{xs:'none', sm:'flex'}}}
                     >
-                        <Button as={Link} to={'/'}>Portfolio</Button>
-                        <Button as={Link} to={'/about'}>About</Button>
-                        <Button as={Link} to={'/contact'}>Contact</Button>
+                        <Button as={Link} to={'/'} activeNav={route=='/'}>Portfolio</Button>
+                        <Button as={Link} to={'/about'} activeNav={route=='/about'}>About</Button>
+                        <Button as={Link} to={'/contact'} activeNav={route=='/contact'}>Contact</Button>
                     </Box>
                     <MenuRoundedIcon sx={{display:{xs:'block', sm:'none'}}} onClick={toggleMobileMenu(true)}/>
                 </Box>

@@ -5,7 +5,7 @@ export const Button = styled.button `
     text-decoration: none;
     background-color: inherit;
     border: none;
-    padding: 0;
+    padding: 10px;
     display: block;
     width: fit-content;
     margin: 0 1.5rem;
@@ -25,6 +25,14 @@ export const Button = styled.button `
     ${ props => props.isActive && css `
         background: #3EB489;
         color: white;
+    `};
+    ${ props => props.activeNav && css `
+        color: white;
+        background-color: #3EB489;
+        border-radius: 4px;
+    `};
+    ${ props => props.mobileButton && css `
+        padding: 0;
     `};
 ` 
 

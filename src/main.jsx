@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
-import styles from './index.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import {

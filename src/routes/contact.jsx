@@ -6,9 +6,13 @@ import {useEffect, useState} from 'react';
 
 export default function Contact(){
     const form = useRef();
+    emailjs.init('6MEK8Eunpsf0lrq2S');
     const sendEmail = (e) => {
         e.preventDefault();
+        form.current.contact_number.value = Math.random() * 100000 | 0;
+        emailjs.sendForm('contact_service', 'contact_form', form.current);
     }
+    
 
     const tablet = window.matchMedia('(min-width: 600px)');
     const desktop = window.matchMedia('(min-width: 900px)');
@@ -31,6 +35,7 @@ export default function Contact(){
         <Box sx={{mb:'2rem'}}>
             <Hero title="Reach out! Let's start something together." heroURL= {isDesktop ? '/assets/home-hero-background-desktop.jpg' : '/assets/home-hero-background.jpg'} />
             <form ref={form} onSubmit={sendEmail} id="contact-form" style={styles.form(isTablet)}>
+                <input type="hidden" name="contact_number" />
                 <Typography variant="body2">Name</Typography>
                 <Input type="text" name="user_name" placeholder="Enter your name" />
                 <Typography variant="body2" >Email</Typography>
@@ -44,7 +49,7 @@ export default function Contact(){
 }
 const styles = {
     form: isTablet => ({
-        width: isTablet ? '70%' : '95%',
+        width: isTablet ? '70%' : '90%',
         maxWidth: '700px',
         textAlign: 'left',
         margin: 'auto'

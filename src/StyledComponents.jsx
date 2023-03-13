@@ -26,7 +26,7 @@ export const Button = styled.button `
         background: #3EB489;
         color: white;
     `};
-    ${ props => props.activeNav && css `
+    ${ props => props.activenav && css `
         color: white;
         background-color: #3EB489;
         border-radius: 4px;

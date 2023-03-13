@@ -53,9 +53,9 @@ export default function Hero( {title, heroURL, isContactButton, thumbnailURL} ) 
                     </Link>
                     <Box sx={{display:{xs:'none', sm:'flex'}}}
                     >
-                        <Button as={Link} to={'/'} activeNav={route=='/'}>Portfolio</Button>
-                        <Button as={Link} to={'/about'} activeNav={route=='/about'}>About</Button>
-                        <Button as={Link} to={'/contact'} activeNav={route=='/contact'}>Contact</Button>
+                        <Button as={Link} to={'/'} activenav={route == '/' ? 'true' : undefined}>Portfolio</Button>
+                        <Button as={Link} to={'/about'} activenav={route == '/about' ? 'true' : undefined}>About</Button>
+                        <Button as={Link} to={'/contact'} activenav={route == '/contact' ? 'true' : undefined}>Contact</Button>
                     </Box>
                     <MenuRoundedIcon sx={{display:{xs:'block', sm:'none'}}} onClick={toggleMobileMenu(true)}/>
                 </Box>
